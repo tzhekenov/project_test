@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # Пример данных: суммы заказов и соответствующие чаевые с добавлением случайного шума
 np.random.seed(42)  # Для воспроизводимости результатов
 order_amounts = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]).reshape(-1, 1)
-tips = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+tips = np.array([1, 3, 3, 4, 5, 6, 7, 8, 9, 10])
 
 # Добавление случайного шума
 order_amounts = order_amounts + np.random.normal(0, 5, order_amounts.shape)
@@ -33,7 +33,7 @@ def predict_tip(order_amount):
     return model.predict(np.array([[order_amount]]))[0]
 
 # Пример использования
-order_amount = 75  # Стоимость заказа
+order_amount = 150  # Стоимость заказа
 predicted_tip = predict_tip(order_amount)
 print(f'Прогнозируемые чаевые для суммы заказа {order_amount} составляют {predicted_tip:.2f}')
 # Заголовок приложения
